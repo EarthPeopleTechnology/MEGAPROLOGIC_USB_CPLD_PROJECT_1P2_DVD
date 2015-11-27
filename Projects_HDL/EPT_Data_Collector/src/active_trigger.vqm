@@ -1,0 +1,542 @@
+// Copyright (C) 1991-2011 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 32-bit"
+// VERSION "Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition"
+
+// DATE "11/11/2012 18:19:11"
+
+module 	active_trigger (
+	uc_out,
+	trigger_to_device,
+	uc_clk,
+	uc_reset,
+	uc_in,
+	trigger_to_host);
+output 	[21:0] uc_out;
+output 	[7:0] trigger_to_device;
+input 	uc_clk;
+input 	uc_reset;
+input 	[23:0] uc_in;
+input 	[7:0] trigger_to_host;
+wire \previous_to_trigupdate[1] ;
+wire \previous_to_trigupdate[3] ;
+wire \previous_to_trigupdate[5] ;
+wire \previous_to_trigupdate[7] ;
+wire \WideOr0~1 ;
+wire \WideOr0~0 ;
+wire WideOr0;
+wire \previous_to_trigupdate[7]~0 ;
+wire \previous_to_trigupdate[6] ;
+wire \Equal1~3 ;
+wire \previous_to_trigupdate[2] ;
+wire \Equal1~1 ;
+wire \previous_to_trigupdate[4] ;
+wire \Equal1~2 ;
+wire \previous_to_trigupdate[0] ;
+wire \Equal1~0 ;
+wire \Equal1~4 ;
+wire trigger_to_host_flag;
+wire to_trigupdate;
+wire \uc_out~0 ;
+wire \uc_out~1 ;
+wire \uc_out~2 ;
+wire \uc_out~3 ;
+wire \uc_out~4 ;
+wire \uc_out~5 ;
+wire \uc_out~6 ;
+wire \uc_out~7 ;
+wire \trigger_to_device~0 ;
+wire \trigger_to_device~1 ;
+wire \trigger_to_device~2 ;
+wire \trigger_to_device~3 ;
+wire \trigger_to_device~4 ;
+wire \trigger_to_device~5 ;
+wire \trigger_to_device~6 ;
+wire \trigger_to_device~7 ;
+wire [7:0] previous_to_trigupdate;
+
+wire __ALT_INV__uc_reset;
+
+wire gnd;
+wire vcc;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+
+assign __ALT_INV__uc_reset = ~ uc_reset;
+
+maxii_lcell \WideOr0~1_I (
+	.dataa(trigger_to_host[5]),
+	.datab(trigger_to_host[7]),
+	.datac(trigger_to_host[6]),
+	.datad(trigger_to_host[4]),
+	.combout(\WideOr0~1 ));
+defparam \WideOr0~1_I .operation_mode = "normal";
+defparam \WideOr0~1_I .synch_mode = "off";
+defparam \WideOr0~1_I .register_cascade_mode = "off";
+defparam \WideOr0~1_I .sum_lutc_input = "datac";
+defparam \WideOr0~1_I .lut_mask = "FFFE";
+defparam \WideOr0~1_I .output_mode = "comb_only";
+
+maxii_lcell \WideOr0~0_I (
+	.datac(trigger_to_host[0]),
+	.datad(trigger_to_host[1]),
+	.combout(\WideOr0~0 ));
+defparam \WideOr0~0_I .operation_mode = "normal";
+defparam \WideOr0~0_I .synch_mode = "off";
+defparam \WideOr0~0_I .register_cascade_mode = "off";
+defparam \WideOr0~0_I .sum_lutc_input = "datac";
+defparam \WideOr0~0_I .lut_mask = "FFF0";
+defparam \WideOr0~0_I .output_mode = "comb_only";
+
+maxii_lcell \WideOr0~I (
+	.dataa(trigger_to_host[2]),
+	.datab(\WideOr0~1 ),
+	.datac(trigger_to_host[3]),
+	.datad(\WideOr0~0 ),
+	.combout(WideOr0));
+defparam \WideOr0~I .operation_mode = "normal";
+defparam \WideOr0~I .synch_mode = "off";
+defparam \WideOr0~I .register_cascade_mode = "off";
+defparam \WideOr0~I .sum_lutc_input = "datac";
+defparam \WideOr0~I .lut_mask = "FFFE";
+defparam \WideOr0~I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_host_flag~I (
+	.clk(uc_clk),
+	.datab(\Equal1~4 ),
+	.datac(to_trigupdate),
+	.datad(WideOr0),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.combout(\previous_to_trigupdate[7]~0 ),
+	.regout(trigger_to_host_flag));
+defparam \trigger_to_host_flag~I .operation_mode = "normal";
+defparam \trigger_to_host_flag~I .synch_mode = "on";
+defparam \trigger_to_host_flag~I .register_cascade_mode = "off";
+defparam \trigger_to_host_flag~I .sum_lutc_input = "qfbk";
+defparam \trigger_to_host_flag~I .lut_mask = "0300";
+defparam \trigger_to_host_flag~I .output_mode = "reg_and_comb";
+
+maxii_lcell \previous_to_trigupdate[6]~I (
+	.clk(uc_clk),
+	.datac(trigger_to_host[6]),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.regout(\previous_to_trigupdate[6] ));
+defparam \previous_to_trigupdate[6]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[6]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[6]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[6]~I .sum_lutc_input = "datac";
+defparam \previous_to_trigupdate[6]~I .lut_mask = "0000";
+defparam \previous_to_trigupdate[6]~I .output_mode = "reg_only";
+
+maxii_lcell \previous_to_trigupdate[7]~I (
+	.clk(uc_clk),
+	.dataa(trigger_to_host[7]),
+	.datab(trigger_to_host[6]),
+	.datac(trigger_to_host[7]),
+	.datad(\previous_to_trigupdate[6] ),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.combout(\Equal1~3 ),
+	.regout(\previous_to_trigupdate[7] ));
+defparam \previous_to_trigupdate[7]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[7]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[7]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[7]~I .sum_lutc_input = "qfbk";
+defparam \previous_to_trigupdate[7]~I .lut_mask = "8421";
+defparam \previous_to_trigupdate[7]~I .output_mode = "comb_only";
+
+maxii_lcell \previous_to_trigupdate[2]~I (
+	.clk(uc_clk),
+	.datac(trigger_to_host[2]),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.regout(\previous_to_trigupdate[2] ));
+defparam \previous_to_trigupdate[2]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[2]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[2]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[2]~I .sum_lutc_input = "datac";
+defparam \previous_to_trigupdate[2]~I .lut_mask = "0000";
+defparam \previous_to_trigupdate[2]~I .output_mode = "reg_only";
+
+maxii_lcell \previous_to_trigupdate[3]~I (
+	.clk(uc_clk),
+	.dataa(trigger_to_host[3]),
+	.datab(trigger_to_host[2]),
+	.datac(trigger_to_host[3]),
+	.datad(\previous_to_trigupdate[2] ),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.combout(\Equal1~1 ),
+	.regout(\previous_to_trigupdate[3] ));
+defparam \previous_to_trigupdate[3]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[3]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[3]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[3]~I .sum_lutc_input = "qfbk";
+defparam \previous_to_trigupdate[3]~I .lut_mask = "8421";
+defparam \previous_to_trigupdate[3]~I .output_mode = "comb_only";
+
+maxii_lcell \previous_to_trigupdate[4]~I (
+	.clk(uc_clk),
+	.datac(trigger_to_host[4]),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.regout(\previous_to_trigupdate[4] ));
+defparam \previous_to_trigupdate[4]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[4]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[4]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[4]~I .sum_lutc_input = "datac";
+defparam \previous_to_trigupdate[4]~I .lut_mask = "0000";
+defparam \previous_to_trigupdate[4]~I .output_mode = "reg_only";
+
+maxii_lcell \previous_to_trigupdate[5]~I (
+	.clk(uc_clk),
+	.dataa(trigger_to_host[4]),
+	.datab(trigger_to_host[5]),
+	.datac(trigger_to_host[5]),
+	.datad(\previous_to_trigupdate[4] ),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.combout(\Equal1~2 ),
+	.regout(\previous_to_trigupdate[5] ));
+defparam \previous_to_trigupdate[5]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[5]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[5]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[5]~I .sum_lutc_input = "qfbk";
+defparam \previous_to_trigupdate[5]~I .lut_mask = "8241";
+defparam \previous_to_trigupdate[5]~I .output_mode = "comb_only";
+
+maxii_lcell \previous_to_trigupdate[0]~I (
+	.clk(uc_clk),
+	.datac(trigger_to_host[0]),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.regout(\previous_to_trigupdate[0] ));
+defparam \previous_to_trigupdate[0]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[0]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[0]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[0]~I .sum_lutc_input = "datac";
+defparam \previous_to_trigupdate[0]~I .lut_mask = "0000";
+defparam \previous_to_trigupdate[0]~I .output_mode = "reg_only";
+
+maxii_lcell \previous_to_trigupdate[1]~I (
+	.clk(uc_clk),
+	.dataa(trigger_to_host[0]),
+	.datab(\previous_to_trigupdate[0] ),
+	.datac(trigger_to_host[1]),
+	.datad(trigger_to_host[1]),
+	.aclr(__ALT_INV__uc_reset),
+	.sload(vcc),
+	.ena(\previous_to_trigupdate[7]~0 ),
+	.combout(\Equal1~0 ),
+	.regout(\previous_to_trigupdate[1] ));
+defparam \previous_to_trigupdate[1]~I .operation_mode = "normal";
+defparam \previous_to_trigupdate[1]~I .synch_mode = "on";
+defparam \previous_to_trigupdate[1]~I .register_cascade_mode = "off";
+defparam \previous_to_trigupdate[1]~I .sum_lutc_input = "qfbk";
+defparam \previous_to_trigupdate[1]~I .lut_mask = "9009";
+defparam \previous_to_trigupdate[1]~I .output_mode = "comb_only";
+
+maxii_lcell \Equal1~4_I (
+	.dataa(\Equal1~3 ),
+	.datab(\Equal1~1 ),
+	.datac(\Equal1~2 ),
+	.datad(\Equal1~0 ),
+	.combout(\Equal1~4 ));
+defparam \Equal1~4_I .operation_mode = "normal";
+defparam \Equal1~4_I .synch_mode = "off";
+defparam \Equal1~4_I .register_cascade_mode = "off";
+defparam \Equal1~4_I .sum_lutc_input = "datac";
+defparam \Equal1~4_I .lut_mask = "8000";
+defparam \Equal1~4_I .output_mode = "comb_only";
+
+maxii_lcell \to_trigupdate~I (
+	.clk(uc_clk),
+	.dataa(\Equal1~4 ),
+	.datab(to_trigupdate),
+	.datac(WideOr0),
+	.datad(trigger_to_host_flag),
+	.aclr(__ALT_INV__uc_reset),
+	.regout(to_trigupdate));
+defparam \to_trigupdate~I .operation_mode = "normal";
+defparam \to_trigupdate~I .synch_mode = "off";
+defparam \to_trigupdate~I .register_cascade_mode = "off";
+defparam \to_trigupdate~I .sum_lutc_input = "datac";
+defparam \to_trigupdate~I .lut_mask = "0054";
+defparam \to_trigupdate~I .output_mode = "reg_only";
+
+maxii_lcell \uc_out~0_I (
+	.datab(to_trigupdate),
+	.datac(trigger_to_host[0]),
+	.combout(\uc_out~0 ));
+defparam \uc_out~0_I .operation_mode = "normal";
+defparam \uc_out~0_I .synch_mode = "off";
+defparam \uc_out~0_I .register_cascade_mode = "off";
+defparam \uc_out~0_I .sum_lutc_input = "datac";
+defparam \uc_out~0_I .lut_mask = "C0C0";
+defparam \uc_out~0_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~1_I (
+	.datac(to_trigupdate),
+	.datad(trigger_to_host[1]),
+	.combout(\uc_out~1 ));
+defparam \uc_out~1_I .operation_mode = "normal";
+defparam \uc_out~1_I .synch_mode = "off";
+defparam \uc_out~1_I .register_cascade_mode = "off";
+defparam \uc_out~1_I .sum_lutc_input = "datac";
+defparam \uc_out~1_I .lut_mask = "F000";
+defparam \uc_out~1_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~2_I (
+	.datab(to_trigupdate),
+	.datac(trigger_to_host[2]),
+	.combout(\uc_out~2 ));
+defparam \uc_out~2_I .operation_mode = "normal";
+defparam \uc_out~2_I .synch_mode = "off";
+defparam \uc_out~2_I .register_cascade_mode = "off";
+defparam \uc_out~2_I .sum_lutc_input = "datac";
+defparam \uc_out~2_I .lut_mask = "C0C0";
+defparam \uc_out~2_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~3_I (
+	.datab(to_trigupdate),
+	.datac(trigger_to_host[3]),
+	.combout(\uc_out~3 ));
+defparam \uc_out~3_I .operation_mode = "normal";
+defparam \uc_out~3_I .synch_mode = "off";
+defparam \uc_out~3_I .register_cascade_mode = "off";
+defparam \uc_out~3_I .sum_lutc_input = "datac";
+defparam \uc_out~3_I .lut_mask = "C0C0";
+defparam \uc_out~3_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~4_I (
+	.dataa(to_trigupdate),
+	.datad(trigger_to_host[4]),
+	.combout(\uc_out~4 ));
+defparam \uc_out~4_I .operation_mode = "normal";
+defparam \uc_out~4_I .synch_mode = "off";
+defparam \uc_out~4_I .register_cascade_mode = "off";
+defparam \uc_out~4_I .sum_lutc_input = "datac";
+defparam \uc_out~4_I .lut_mask = "AA00";
+defparam \uc_out~4_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~5_I (
+	.dataa(to_trigupdate),
+	.datad(trigger_to_host[5]),
+	.combout(\uc_out~5 ));
+defparam \uc_out~5_I .operation_mode = "normal";
+defparam \uc_out~5_I .synch_mode = "off";
+defparam \uc_out~5_I .register_cascade_mode = "off";
+defparam \uc_out~5_I .sum_lutc_input = "datac";
+defparam \uc_out~5_I .lut_mask = "AA00";
+defparam \uc_out~5_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~6_I (
+	.datab(to_trigupdate),
+	.datac(trigger_to_host[6]),
+	.combout(\uc_out~6 ));
+defparam \uc_out~6_I .operation_mode = "normal";
+defparam \uc_out~6_I .synch_mode = "off";
+defparam \uc_out~6_I .register_cascade_mode = "off";
+defparam \uc_out~6_I .sum_lutc_input = "datac";
+defparam \uc_out~6_I .lut_mask = "C0C0";
+defparam \uc_out~6_I .output_mode = "comb_only";
+
+maxii_lcell \uc_out~7_I (
+	.datac(to_trigupdate),
+	.datad(trigger_to_host[7]),
+	.combout(\uc_out~7 ));
+defparam \uc_out~7_I .operation_mode = "normal";
+defparam \uc_out~7_I .synch_mode = "off";
+defparam \uc_out~7_I .register_cascade_mode = "off";
+defparam \uc_out~7_I .sum_lutc_input = "datac";
+defparam \uc_out~7_I .lut_mask = "F000";
+defparam \uc_out~7_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~0_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[0]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~0 ));
+defparam \trigger_to_device~0_I .operation_mode = "normal";
+defparam \trigger_to_device~0_I .synch_mode = "off";
+defparam \trigger_to_device~0_I .register_cascade_mode = "off";
+defparam \trigger_to_device~0_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~0_I .lut_mask = "0020";
+defparam \trigger_to_device~0_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~1_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[1]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~1 ));
+defparam \trigger_to_device~1_I .operation_mode = "normal";
+defparam \trigger_to_device~1_I .synch_mode = "off";
+defparam \trigger_to_device~1_I .register_cascade_mode = "off";
+defparam \trigger_to_device~1_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~1_I .lut_mask = "0020";
+defparam \trigger_to_device~1_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~2_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[2]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~2 ));
+defparam \trigger_to_device~2_I .operation_mode = "normal";
+defparam \trigger_to_device~2_I .synch_mode = "off";
+defparam \trigger_to_device~2_I .register_cascade_mode = "off";
+defparam \trigger_to_device~2_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~2_I .lut_mask = "0020";
+defparam \trigger_to_device~2_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~3_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[3]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~3 ));
+defparam \trigger_to_device~3_I .operation_mode = "normal";
+defparam \trigger_to_device~3_I .synch_mode = "off";
+defparam \trigger_to_device~3_I .register_cascade_mode = "off";
+defparam \trigger_to_device~3_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~3_I .lut_mask = "0020";
+defparam \trigger_to_device~3_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~4_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[4]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~4 ));
+defparam \trigger_to_device~4_I .operation_mode = "normal";
+defparam \trigger_to_device~4_I .synch_mode = "off";
+defparam \trigger_to_device~4_I .register_cascade_mode = "off";
+defparam \trigger_to_device~4_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~4_I .lut_mask = "0020";
+defparam \trigger_to_device~4_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~5_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[5]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~5 ));
+defparam \trigger_to_device~5_I .operation_mode = "normal";
+defparam \trigger_to_device~5_I .synch_mode = "off";
+defparam \trigger_to_device~5_I .register_cascade_mode = "off";
+defparam \trigger_to_device~5_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~5_I .lut_mask = "0020";
+defparam \trigger_to_device~5_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~6_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[6]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~6 ));
+defparam \trigger_to_device~6_I .operation_mode = "normal";
+defparam \trigger_to_device~6_I .synch_mode = "off";
+defparam \trigger_to_device~6_I .register_cascade_mode = "off";
+defparam \trigger_to_device~6_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~6_I .lut_mask = "0020";
+defparam \trigger_to_device~6_I .output_mode = "comb_only";
+
+maxii_lcell \trigger_to_device~7_I (
+	.dataa(uc_in[19]),
+	.datab(uc_in[20]),
+	.datac(uc_in[7]),
+	.datad(uc_in[21]),
+	.combout(\trigger_to_device~7 ));
+defparam \trigger_to_device~7_I .operation_mode = "normal";
+defparam \trigger_to_device~7_I .synch_mode = "off";
+defparam \trigger_to_device~7_I .register_cascade_mode = "off";
+defparam \trigger_to_device~7_I .sum_lutc_input = "datac";
+defparam \trigger_to_device~7_I .lut_mask = "0020";
+defparam \trigger_to_device~7_I .output_mode = "comb_only";
+
+assign uc_out[0] = \uc_out~0 ;
+
+assign uc_out[1] = \uc_out~1 ;
+
+assign uc_out[2] = \uc_out~2 ;
+
+assign uc_out[3] = \uc_out~3 ;
+
+assign uc_out[4] = \uc_out~4 ;
+
+assign uc_out[5] = \uc_out~5 ;
+
+assign uc_out[6] = \uc_out~6 ;
+
+assign uc_out[7] = \uc_out~7 ;
+
+assign uc_out[8] = gnd;
+
+assign uc_out[9] = gnd;
+
+assign uc_out[10] = gnd;
+
+assign uc_out[11] = gnd;
+
+assign uc_out[12] = gnd;
+
+assign uc_out[13] = gnd;
+
+assign uc_out[14] = gnd;
+
+assign uc_out[15] = gnd;
+
+assign uc_out[16] = gnd;
+
+assign uc_out[17] = gnd;
+
+assign uc_out[18] = gnd;
+
+assign uc_out[19] = to_trigupdate;
+
+assign uc_out[20] = gnd;
+
+assign uc_out[21] = gnd;
+
+assign trigger_to_device[0] = \trigger_to_device~0 ;
+
+assign trigger_to_device[1] = \trigger_to_device~1 ;
+
+assign trigger_to_device[2] = \trigger_to_device~2 ;
+
+assign trigger_to_device[3] = \trigger_to_device~3 ;
+
+assign trigger_to_device[4] = \trigger_to_device~4 ;
+
+assign trigger_to_device[5] = \trigger_to_device~5 ;
+
+assign trigger_to_device[6] = \trigger_to_device~6 ;
+
+assign trigger_to_device[7] = \trigger_to_device~7 ;
+
+endmodule

@@ -1,0 +1,116 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2011 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+# Date created = 20:57:26  March 09, 2013
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		EPT_570_AP_M4_Top_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX II"
+set_global_assignment -name DEVICE EPM570T100C5
+set_global_assignment -name TOP_LEVEL_ENTITY EPT_570_AP_M4_Top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "11.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:57:26  MARCH 09, 2013"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name VERILOG_FILE ../src/eptWireOR.v
+set_global_assignment -name VERILOG_FILE ../src/EPT_570_AP_M4_Top.v
+set_global_assignment -name VQM_FILE ../src/active_trigger.vqm
+set_global_assignment -name VQM_FILE ../src/active_transfer_library.vqm
+set_global_assignment -name VQM_FILE ../src/active_transfer.vqm
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_location_assignment PIN_61 -to LB_BYTE_A[7]
+set_location_assignment PIN_58 -to LB_BYTE_A[6]
+set_location_assignment PIN_57 -to LB_BYTE_A[5]
+set_location_assignment PIN_56 -to LB_BYTE_A[4]
+set_location_assignment PIN_55 -to LB_BYTE_A[3]
+set_location_assignment PIN_54 -to LB_BYTE_A[2]
+set_location_assignment PIN_53 -to LB_BYTE_A[1]
+set_location_assignment PIN_52 -to LB_BYTE_A[0]
+set_location_assignment PIN_73 -to LB_BYTE_B[7]
+set_location_assignment PIN_72 -to LB_BYTE_B[6]
+set_location_assignment PIN_71 -to LB_BYTE_B[5]
+set_location_assignment PIN_70 -to LB_BYTE_B[4]
+set_location_assignment PIN_69 -to LB_BYTE_B[3]
+set_location_assignment PIN_68 -to LB_BYTE_B[2]
+set_location_assignment PIN_67 -to LB_BYTE_B[1]
+set_location_assignment PIN_66 -to LB_BYTE_B[0]
+set_location_assignment PIN_86 -to LB_BYTE_C[7]
+set_location_assignment PIN_87 -to LB_BYTE_C[6]
+set_location_assignment PIN_89 -to LB_BYTE_C[5]
+set_location_assignment PIN_91 -to LB_BYTE_C[4]
+set_location_assignment PIN_92 -to LB_BYTE_C[3]
+set_location_assignment PIN_95 -to LB_BYTE_C[2]
+set_location_assignment PIN_96 -to LB_BYTE_C[1]
+set_location_assignment PIN_97 -to LB_BYTE_C[0]
+set_location_assignment PIN_76 -to LB_BYTE_D[7]
+set_location_assignment PIN_77 -to LB_BYTE_D[6]
+set_location_assignment PIN_78 -to LB_BYTE_D[5]
+set_location_assignment PIN_81 -to LB_BYTE_D[4]
+set_location_assignment PIN_82 -to LB_BYTE_D[3]
+set_location_assignment PIN_83 -to LB_BYTE_D[2]
+set_location_assignment PIN_84 -to LB_BYTE_D[1]
+set_location_assignment PIN_85 -to LB_BYTE_D[0]
+set_location_assignment PIN_98 -to LED[2]
+set_location_assignment PIN_75 -to LED[1]
+set_location_assignment PIN_74 -to LED[0]
+set_location_assignment PIN_100 -to SW_USER_2
+set_location_assignment PIN_15 -to SW_USER_1
+set_location_assignment PIN_1 -to TR_DIR_1
+set_location_assignment PIN_3 -to TR_DIR_2
+set_location_assignment PIN_5 -to TR_DIR_3
+set_location_assignment PIN_7 -to TR_DIR_4
+set_location_assignment PIN_2 -to TR_OE_1
+set_location_assignment PIN_4 -to TR_OE_2
+set_location_assignment PIN_6 -to TR_OE_3
+set_location_assignment PIN_8 -to TR_OE_4
+set_location_assignment PIN_12 -to aa[1]
+set_location_assignment PIN_43 -to aa[0]
+set_location_assignment PIN_40 -to bc_in[1]
+set_location_assignment PIN_41 -to bc_in[0]
+set_location_assignment PIN_42 -to bc_out[2]
+set_location_assignment PIN_47 -to bc_out[1]
+set_location_assignment PIN_48 -to bc_out[0]
+set_location_assignment PIN_27 -to bd_inout[7]
+set_location_assignment PIN_26 -to bd_inout[6]
+set_location_assignment PIN_21 -to bd_inout[5]
+set_location_assignment PIN_20 -to bd_inout[4]
+set_location_assignment PIN_19 -to bd_inout[3]
+set_location_assignment PIN_18 -to bd_inout[2]
+set_location_assignment PIN_17 -to bd_inout[1]
+set_location_assignment PIN_16 -to bd_inout[0]
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_99 -to LED3
+set_global_assignment -name MISC_FILE "C:/Jolly/Code_FPGA/EPT_570_AP_Data_Collector/EPT_570_AP_Data_Collector/EPT_570_AP_M4_Top/EPT_570_AP_M4_Top.dpf"

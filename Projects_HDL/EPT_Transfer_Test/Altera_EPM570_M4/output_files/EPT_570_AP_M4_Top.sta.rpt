@@ -1,0 +1,962 @@
+TimeQuest Timing Analyzer report for EPT_570_AP_M4_Top
+Sun Mar 03 22:52:07 2013
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Fmax Summary
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width Summary
+ 12. Setup: 'aa[1]'
+ 13. Hold: 'aa[1]'
+ 14. Recovery: 'aa[1]'
+ 15. Removal: 'aa[1]'
+ 16. Minimum Pulse Width: 'aa[1]'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Output Enable Times
+ 22. Minimum Output Enable Times
+ 23. Output Disable Times
+ 24. Minimum Output Disable Times
+ 25. Setup Transfers
+ 26. Hold Transfers
+ 27. Recovery Transfers
+ 28. Removal Transfers
+ 29. Report TCCS
+ 30. Report RSKM
+ 31. Unconstrained Paths
+ 32. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; EPT_570_AP_M4_Top                                               ;
+; Device Family      ; MAX II                                                          ;
+; Device Name        ; EPM570T100C5                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Slow Model                                                      ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ; < 0.1%      ;
+;     3-4 processors         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------+
+; SDC File List                                             ;
++-----------------------+--------+--------------------------+
+; SDC File Path         ; Status ; Read at                  ;
++-----------------------+--------+--------------------------+
+; EPT_570_AP_M4_Top.sdc ; OK     ; Sun Mar 03 22:52:06 2013 ;
++-----------------------+--------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; aa[1]      ; Base ; 15.151 ; 66.0 MHz  ; 0.000 ; 7.575 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { aa[1] } ;
++------------+------+--------+-----------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 65.76 MHz ; 65.76 MHz       ; aa[1]      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; aa[1] ; -0.056 ; -0.280        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; aa[1] ; 1.379 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Recovery Summary              ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; aa[1] ; 6.003 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Removal Summary               ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; aa[1] ; 8.594 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Minimum Pulse Width Summary   ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; aa[1] ; 7.309 ; 0.000         ;
++-------+-------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'aa[1]'                                                                                                                                                                                                                                                                                                        ;
++--------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                     ; To Node                                                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.056 ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[0] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.874     ;
+; -0.056 ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[3] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.874     ;
+; -0.056 ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[4] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.874     ;
+; -0.056 ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[6] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.874     ;
+; -0.056 ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[7] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.874     ;
+; 0.676  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|read_data[2]                                                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.142     ;
+; 0.679  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[0]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.139     ;
+; 0.679  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[4]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.139     ;
+; 0.811  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 14.007     ;
+; 0.886  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.932     ;
+; 0.927  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.891     ;
+; 0.988  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.830     ;
+; 0.995  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.823     ;
+; 1.139  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.679     ;
+; 1.139  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.679     ;
+; 1.139  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.679     ;
+; 1.139  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.679     ;
+; 1.147  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.671     ;
+; 1.147  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.671     ;
+; 1.159  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[1] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.659     ;
+; 1.159  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[2]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.659     ;
+; 1.159  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[2] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.659     ;
+; 1.159  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[2] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.659     ;
+; 1.159  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[5] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.659     ;
+; 1.164  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.654     ;
+; 1.178  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.640     ;
+; 1.178  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.640     ;
+; 1.178  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.640     ;
+; 1.183  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[3]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.635     ;
+; 1.183  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[6]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.635     ;
+; 1.183  ; reset_signal_reg                                                                                              ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[7]  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.635     ;
+; 1.210  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.608     ;
+; 1.214  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.604     ;
+; 1.214  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.604     ;
+; 1.214  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.604     ;
+; 1.214  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.604     ;
+; 1.218  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|read_data[4]                                                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.600     ;
+; 1.222  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.596     ;
+; 1.222  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.596     ;
+; 1.253  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.565     ;
+; 1.253  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.565     ;
+; 1.253  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.565     ;
+; 1.255  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.563     ;
+; 1.255  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.563     ;
+; 1.255  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.563     ;
+; 1.255  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.563     ;
+; 1.263  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.555     ;
+; 1.263  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.555     ;
+; 1.284  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[2]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.534     ;
+; 1.294  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.524     ;
+; 1.294  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.524     ;
+; 1.294  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.524     ;
+; 1.305  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[1]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~68                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.513     ;
+; 1.316  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.502     ;
+; 1.316  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.502     ;
+; 1.316  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.502     ;
+; 1.316  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.502     ;
+; 1.323  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.495     ;
+; 1.323  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.495     ;
+; 1.323  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.495     ;
+; 1.323  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.495     ;
+; 1.324  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.494     ;
+; 1.324  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.494     ;
+; 1.331  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.487     ;
+; 1.331  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.487     ;
+; 1.355  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.463     ;
+; 1.355  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.463     ;
+; 1.355  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.463     ;
+; 1.362  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.456     ;
+; 1.362  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.456     ;
+; 1.362  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.456     ;
+; 1.413  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~66                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.405     ;
+; 1.413  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~65                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.405     ;
+; 1.413  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~64                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.405     ;
+; 1.427  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[2]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.391     ;
+; 1.429  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[6]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.389     ;
+; 1.440  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[3]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.378     ;
+; 1.440  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[4]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.378     ;
+; 1.488  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~66                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.330     ;
+; 1.488  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~65                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.330     ;
+; 1.488  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~64                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.330     ;
+; 1.492  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.326     ;
+; 1.492  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.326     ;
+; 1.492  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.326     ;
+; 1.492  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.326     ;
+; 1.500  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.318     ;
+; 1.500  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.318     ;
+; 1.529  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~66                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.289     ;
+; 1.529  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~65                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.289     ;
+; 1.529  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~64                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.289     ;
+; 1.531  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~93                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.287     ;
+; 1.531  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~95                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.287     ;
+; 1.531  ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]                                            ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~90                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.287     ;
+; 1.538  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~70                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.280     ;
+; 1.538  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~67                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.280     ;
+; 1.538  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~69                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.280     ;
+; 1.538  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~71                                                                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.280     ;
+; 1.546  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~116                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.272     ;
+; 1.546  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1]                                         ; sync_fifo:BLOCK_IN_FIFO|mem_array:U_MEM_ARRAY|mem~112                                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.272     ;
+; 1.567  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[6] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[2]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 13.251     ;
++--------+---------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'aa[1]'                                                                                                                                                                                                                                                                                                                 ;
++-------+------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                                                                              ; To Node                                                                                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.379 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[0]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.600      ;
+; 1.396 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[1] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[1]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.617      ;
+; 1.397 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[5] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[5]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.618      ;
+; 1.398 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[2] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[2]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.619      ;
+; 1.401 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[4] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[4]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.622      ;
+; 1.408 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]~reg0                                                        ; transfer_out_byte[4]                                                                                                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.629      ;
+; 1.409 ; transfer_control_state.TRANSFER_DECODE_BYTE                                                                            ; transfer_control_state.TRANSFER_CONTROL_SET                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.630      ;
+; 1.414 ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                                                                       ; active_trigger:ACTIVE_TRIGGER_INST|trigger_to_host_flag                                                                ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.635      ;
+; 1.649 ; active_block:BLOCK_TRANSFER_INST|uc_out[5]~reg0                                                                        ; active_block:BLOCK_TRANSFER_INST|uc_out[5]~reg0                                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.870      ;
+; 1.649 ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                                     ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.870      ;
+; 1.649 ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]                                                           ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.870      ;
+; 1.650 ; active_block:BLOCK_TRANSFER_INST|uc_out[7]~reg0                                                                        ; active_block:BLOCK_TRANSFER_INST|uc_out[7]~reg0                                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.871      ;
+; 1.650 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_to_device[4]    ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_length[4]        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.871      ;
+; 1.656 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|payload_from_device[7] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[7]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.877      ;
+; 1.658 ; reset_counter[9]                                                                                                       ; reset_counter[9]                                                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.879      ;
+; 1.658 ; transfer_to_host_counter[1]                                                                                            ; transfer_to_host_counter[1]                                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.879      ;
+; 1.658 ; fifo_wren_reg                                                                                                          ; fifo_wren_reg                                                                                                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.879      ;
+; 1.660 ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[4]                                                  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[4]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.881      ;
+; 1.675 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[2]          ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[2]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.896      ;
+; 1.679 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[0]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[1]               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.900      ;
+; 1.682 ; active_block:BLOCK_TRANSFER_INST|state_in[5]                                                                           ; active_block:BLOCK_TRANSFER_INST|state_in[5]                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.903      ;
+; 1.685 ; active_block:BLOCK_TRANSFER_INST|state_in[4]                                                                           ; active_block:BLOCK_TRANSFER_INST|state_in[4]                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.906      ;
+; 1.686 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[4]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[4]               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.907      ;
+; 1.694 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[2]           ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[2]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.915      ;
+; 1.697 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[2]           ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[3]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.918      ;
+; 1.698 ; state_block_loopback.BLOCK_LOOPBACK_IDLE                                                                               ; state_block_loopback.BLOCK_LOOPBACK_INIT                                                                               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.919      ;
+; 1.708 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[1] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[1]       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.929      ;
+; 1.715 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[1] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|uc_in_command[0]       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.936      ;
+; 1.718 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]                                                       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.939      ;
+; 1.725 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]                                                       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.946      ;
+; 1.728 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]                                                       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.TRANSFER_BYTE                                                    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.949      ;
+; 1.732 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]~reg0                                                        ; transfer_control_state.TRANSFER_CONTROL_HDR1                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.953      ;
+; 1.733 ; transfer_control_state.TRANSFER_CONTROL_HDR2                                                                           ; transfer_control_state.TRANSFER_CONTROL_IDLE                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.954      ;
+; 1.734 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]~reg0                                                        ; transfer_control_state.TRANSFER_DECODE_BYTE                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.955      ;
+; 1.753 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR             ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.974      ;
+; 1.764 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR             ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[7]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 1.985      ;
+; 1.781 ; transfer_to_host_state.TRANSFER_HOST_IDLE                                                                              ; transfer_to_host_counter[0]                                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.002      ;
+; 1.795 ; transfer_out_reg                                                                                                       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_in                                                                 ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.016      ;
+; 1.802 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[6]           ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[6]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.023      ;
+; 1.804 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[6]           ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|write_complete_reg ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.025      ;
+; 1.858 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]~reg0                                                        ; transfer_out_byte[3]                                                                                                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.079      ;
+; 1.916 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|block_read_byte        ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|block_read_byte        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.137      ;
+; 1.917 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|write_complete_reg ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|write_complete_reg ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.138      ;
+; 1.917 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_reg        ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_reg        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.138      ;
+; 1.917 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE                                                             ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE                                                             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.138      ;
+; 1.917 ; fifo_wren                                                                                                              ; fifo_wren                                                                                                              ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.138      ;
+; 1.920 ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                                                                       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.141      ;
+; 1.920 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[5]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[6]               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.141      ;
+; 1.922 ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                                                                       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[2]                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.143      ;
+; 1.925 ; active_block:BLOCK_TRANSFER_INST|uc_out[1]~reg0                                                                        ; active_block:BLOCK_TRANSFER_INST|uc_out[1]~reg0                                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.146      ;
+; 1.927 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|write_complete_reg ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|USB_WR             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.148      ;
+; 1.927 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[5]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux_reg  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.148      ;
+; 1.927 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[0] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.148      ;
+; 1.929 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|read_complete_reg  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|read_complete_reg  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.150      ;
+; 1.929 ; transfer_to_host_counter[0]                                                                                            ; transfer_to_host_counter[0]                                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.150      ;
+; 1.934 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[0] ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_counter[1] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.155      ;
+; 1.934 ; transfer_control_state.TRANSFER_CONTROL_IDLE                                                                           ; transfer_control_state.TRANSFER_CONTROL_IDLE                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.155      ;
+; 1.937 ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                                                                       ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.158      ;
+; 1.939 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|write_complete     ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[7]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.160      ;
+; 1.940 ; transfer_control_state.TRANSFER_CONTROL_IDLE                                                                           ; transfer_control_state.TRANSFER_CONTROL_HDR1                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.161      ;
+; 1.948 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]~reg0                                                        ; transfer_control_state.TRANSFER_DECODE_BYTE                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.169      ;
+; 1.949 ; active_block:BLOCK_TRANSFER_INST|state_in[3]                                                                           ; active_block:BLOCK_TRANSFER_INST|state_in[4]                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.170      ;
+; 1.954 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count_reg         ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count_reg         ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.175      ;
+; 1.955 ; active_block:BLOCK_TRANSFER_INST|state_in[3]                                                                           ; active_block:BLOCK_TRANSFER_INST|state_in[5]                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.176      ;
+; 1.966 ; active_block:BLOCK_TRANSFER_INST|state_in[0]                                                                           ; active_block:BLOCK_TRANSFER_INST|state_in[0]                                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.187      ;
+; 1.969 ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                                  ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.190      ;
+; 1.978 ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                                     ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.199      ;
+; 1.981 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.202      ;
+; 1.981 ; active_block:BLOCK_TRANSFER_INST|state_in[0]                                                                           ; active_block:BLOCK_TRANSFER_INST|transfer_received~reg0                                                                ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.202      ;
+; 1.985 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.TRANSFER_BYTE                                                    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.206      ;
+; 1.995 ; block_out_reg                                                                                                          ; state_block_loopback.BLOCK_LOOPBACK_IDLE                                                                               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.216      ;
+; 2.016 ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START                                                                    ; transfer_out_reg                                                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.237      ;
+; 2.025 ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START                                                                    ; transfer_to_host_counter[1]                                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.246      ;
+; 2.026 ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START                                                                    ; transfer_to_host_counter[3]                                                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.247      ;
+; 2.040 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in_reg        ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|reset_uc_in            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.261      ;
+; 2.107 ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[0]                                                           ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[0]                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.328      ;
+; 2.116 ; active_block:BLOCK_TRANSFER_INST|uc_out[4]~reg0                                                                        ; active_block:BLOCK_TRANSFER_INST|uc_out[4]~reg0                                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; reset_counter[1]                                                                                                       ; reset_counter[1]                                                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[0]                                                            ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[0]                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received~reg0                                                            ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received~reg0                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; reset_counter[8]                                                                                                       ; reset_counter[8]                                                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2]                                                           ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2]                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[1]                                                           ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[1]                                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[7]                                                            ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[7]                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.338      ;
+; 2.121 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[6]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[7]               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.342      ;
+; 2.125 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[0]   ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[0]   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.346      ;
+; 2.125 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host_reg      ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host_reg      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126 ; reset_counter[2]                                                                                                       ; reset_counter[2]                                                                                                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[7]   ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[7]   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; active_block:BLOCK_TRANSFER_INST|data_count[1]                                                                         ; active_block:BLOCK_TRANSFER_INST|data_count[1]                                                                         ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[1]                                                            ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[1]                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127 ; active_block:BLOCK_TRANSFER_INST|data_count[2]                                                                         ; active_block:BLOCK_TRANSFER_INST|data_count[2]                                                                         ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.348      ;
+; 2.127 ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[2]                                                            ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[2]                                                            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.348      ;
+; 2.128 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host          ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_to_host          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.349      ;
+; 2.131 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|usb_rxf_n_reg      ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[1]           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.352      ;
+; 2.132 ; active_block:BLOCK_TRANSFER_INST|data_count[0]                                                                         ; active_block:BLOCK_TRANSFER_INST|data_count[0]                                                                         ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.353      ;
+; 2.133 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[2]               ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|state[2]               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.354      ;
+; 2.133 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|length_from_device[2]  ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[2]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.354      ;
+; 2.133 ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE                                                             ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.354      ;
+; 2.134 ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[1]   ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|write_control_mux[1]   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 2.355      ;
++-------+------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'aa[1]'                                                                                                                                                      ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node                                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 6.003 ; reset_signal_reg ; switch_reset                                                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; led_reset                                                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received~reg0           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[2]                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_control_state.TRANSFER_DECODE_BYTE                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_in_received_reg                                              ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[0]                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_HDR2                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[1]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[6]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[7]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.TRANSFER_BYTE   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|to_transfer_update               ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[0]~reg0       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[0]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[1]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[2]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[3]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[4]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[5]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[6]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[7]~reg0                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[3]                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_HDR1                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[0]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; trigger_out[0]                                                        ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[0]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; trigger_out[1]                                                        ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[1]    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[1]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_in_loopback                                                     ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; trigger_out[2]                                                        ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[2]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|state_in[2]                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[3]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[3]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|trigger_to_host_flag               ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_in                ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_reg               ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[4]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[4]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[5]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[5]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[6]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[7]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_counter[7]                                                  ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_IDLE                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_transfer_out_state.BLK_TRANSFER_OUT_COUNT                       ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; block_out_reg                                                         ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.END_TRANSFER    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE            ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_in_loop_back                                                 ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_out_reg                                                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_state.TRANSFER_HOST_IDLE                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; fifo_rden                                                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]    ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[4] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[2] ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[1]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[2]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[7]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[3]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[5]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[1]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[1]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[6]~reg0                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_SET                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|data_count[3]                        ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|data_count[2]                        ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|state_in[1]                          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; fifo_wren                                                             ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; state_block_loopback.BLOCK_LOOPBACK_INIT                              ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; state_block_loopback.FIFO_EN_HIGH                                     ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; state_block_loopback.FIFO_EN_LOW                                      ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[6]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[2]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[4]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[0]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START                   ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_counter[3]                                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_counter[2]                                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_counter[1]                                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; transfer_to_host_counter[0]                                           ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
+; 6.003 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[0]          ; aa[1]        ; aa[1]       ; 15.151       ; 0.000      ; 8.815      ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'aa[1]'                                                                                                                                                       ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node                                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 8.594 ; reset_signal_reg ; switch_reset                                                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; led_reset                                                             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received~reg0           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[2]                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_control_state.TRANSFER_DECODE_BYTE                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_in_received_reg                                              ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|to_trigupdate                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[0]                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_HDR2                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[1]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[6]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[7]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.TRANSFER_BYTE   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|to_transfer_update               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[0]~reg0       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[0]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[1]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[2]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[3]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[4]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[5]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[6]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|uc_out[7]~reg0                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|state_in[3]                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_HDR1                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[0]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; trigger_out[0]                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[0]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; trigger_out[1]                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[3]    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[1]    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[0]    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[1]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_in_loopback                                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; trigger_out[2]                                                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[2]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|state_in[2]                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[3]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[3]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|trigger_to_host_flag               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_in                ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_reg               ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[4]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[4]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[5]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[5]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[6]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[7]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_counter[7]                                                  ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_IDLE                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_transfer_out_state.BLK_TRANSFER_OUT_COUNT                       ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; block_out_reg                                                         ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.END_TRANSFER    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE            ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_in_loop_back                                                 ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_out_reg                                                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_state.TRANSFER_HOST_IDLE                             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[2]    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; fifo_rden                                                             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|read_control_logic:U_READ_CTRL|read_ptr[4]    ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[4] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[0] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[1] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[3] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; sync_fifo:BLOCK_IN_FIFO|write_control_logic:U_WRITE_CTRL|write_ptr[2] ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[1]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[2]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[7]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[3]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[5]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[1]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[1]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|ept_length[6]~reg0                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_control_state.TRANSFER_CONTROL_SET                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|data_count[3]                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|data_count[2]                        ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_block:BLOCK_TRANSFER_INST|state_in[1]                          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; fifo_wren                                                             ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; state_block_loopback.BLOCK_LOOPBACK_INIT                              ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; state_block_loopback.FIFO_EN_HIGH                                     ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; state_block_loopback.FIFO_EN_LOW                                      ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[6]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[2]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[4]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_trigger:ACTIVE_TRIGGER_INST|previous_to_trigupdate[0]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_state.TRANSFER_HOST_LOOPBACK_START                   ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_counter[3]                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_counter[2]                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_counter[1]                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; transfer_to_host_counter[0]                                           ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
+; 8.594 ; reset_signal_reg ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[0]          ; aa[1]        ; aa[1]       ; 0.000        ; 0.000      ; 8.815      ;
++-------+------------------+-----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'aa[1]'                                                                                                                                                                           ;
++-------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------------------------------------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                 ;
++-------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------------------------------------------------------------------+
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.END_TRANSFER                                                     ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.IDLE                                                             ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.SEND_COMMAND                                                     ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state.TRANSFER_BYTE                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|block_transfer_state_counter[0]                                                       ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[0]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[1]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[2]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[3]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[4]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[5]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[6]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|data_count[7]                                                                         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[0]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[1]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[2]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[3]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[4]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[5]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[6]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|ept_length[7]~reg0                                                                    ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[0]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[1]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[2]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[3]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[4]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|state_in[5]                                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[0]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[1]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[2]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[3]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[4]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[5]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[6]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received_count[7]                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_received~reg0                                                                ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[0]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[1]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[2]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[3]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[4]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[5]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[6]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|transfer_to_device[7]~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[0]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[1]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[2]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[3]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[4]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[5]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[6]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_block:BLOCK_TRANSFER_INST|uc_out[7]~reg0                                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[0]                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[1]                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[2]                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_count[3]                                                           ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_in                                                                 ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|start_transfer_reg                                                                ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[0]                                                                       ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[1]                                                                       ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[2]                                                                       ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|state_in[3]                                                                       ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|to_transfer_update                                                                ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_received~reg0                                                            ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[0]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[1]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[2]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[3]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[4]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[5]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[6]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer:ACTIVE_TRANSFER_INST|transfer_to_device[7]~reg0                                                        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[0]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[1]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[2]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[3]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[4]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[5]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[6]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_BYTE[7]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|WRITE_EN               ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[1] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|address_from_device[2] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|block_read_byte        ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[0]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[1]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[2]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[3]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[4]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[5]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[6]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count[7]          ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|byte_count_reg         ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[0] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[1] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|command_from_device[2] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[0] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[1] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[2] ;
+; 7.309 ; 7.575        ; 0.266          ; High Pulse Width ; aa[1] ; Rise       ; active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|endpoint_registers:ENDPOINT_REGISTERS_INST|control_multiplexor[3] ;
++-------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW_USER_1 ; aa[1]      ; 4.349 ; 4.349 ; Rise       ; aa[1]           ;
+; SW_USER_2 ; aa[1]      ; 5.055 ; 5.055 ; Rise       ; aa[1]           ;
+; aa[*]     ; aa[1]      ; 7.476 ; 7.476 ; Rise       ; aa[1]           ;
+;  aa[0]    ; aa[1]      ; 7.476 ; 7.476 ; Rise       ; aa[1]           ;
+; bc_in[*]  ; aa[1]      ; 5.009 ; 5.009 ; Rise       ; aa[1]           ;
+;  bc_in[0] ; aa[1]      ; 5.009 ; 5.009 ; Rise       ; aa[1]           ;
+;  bc_in[1] ; aa[1]      ; 2.731 ; 2.731 ; Rise       ; aa[1]           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW_USER_1 ; aa[1]      ; -3.230 ; -3.230 ; Rise       ; aa[1]           ;
+; SW_USER_2 ; aa[1]      ; -4.022 ; -4.022 ; Rise       ; aa[1]           ;
+; aa[*]     ; aa[1]      ; -5.829 ; -5.829 ; Rise       ; aa[1]           ;
+;  aa[0]    ; aa[1]      ; -5.829 ; -5.829 ; Rise       ; aa[1]           ;
+; bc_in[*]  ; aa[1]      ; -1.913 ; -1.913 ; Rise       ; aa[1]           ;
+;  bc_in[0] ; aa[1]      ; -1.913 ; -1.913 ; Rise       ; aa[1]           ;
+;  bc_in[1] ; aa[1]      ; -2.177 ; -2.177 ; Rise       ; aa[1]           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; bc_out[*]    ; aa[1]      ; 11.069 ; 11.069 ; Rise       ; aa[1]           ;
+;  bc_out[1]   ; aa[1]      ; 11.069 ; 11.069 ; Rise       ; aa[1]           ;
+;  bc_out[2]   ; aa[1]      ; 10.968 ; 10.968 ; Rise       ; aa[1]           ;
+; bd_inout[*]  ; aa[1]      ; 9.472  ; 9.472  ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 9.185  ; 9.185  ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 9.149  ; 9.149  ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 8.919  ; 8.919  ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 9.472  ; 9.472  ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 9.061  ; 9.061  ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 8.940  ; 8.940  ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 8.651  ; 8.651  ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 8.529  ; 8.529  ; Rise       ; aa[1]           ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; bc_out[*]    ; aa[1]      ; 10.828 ; 10.828 ; Rise       ; aa[1]           ;
+;  bc_out[1]   ; aa[1]      ; 11.069 ; 11.069 ; Rise       ; aa[1]           ;
+;  bc_out[2]   ; aa[1]      ; 10.828 ; 10.828 ; Rise       ; aa[1]           ;
+; bd_inout[*]  ; aa[1]      ; 8.529  ; 8.529  ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 9.185  ; 9.185  ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 9.149  ; 9.149  ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 8.919  ; 8.919  ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 9.472  ; 9.472  ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 9.061  ; 9.061  ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 8.940  ; 8.940  ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 8.651  ; 8.651  ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 8.529  ; 8.529  ; Rise       ; aa[1]           ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Output Enable Times                                                      ;
++--------------+------------+--------+------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+------+------------+-----------------+
+; bd_inout[*]  ; aa[1]      ; 13.871 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 14.289 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 14.289 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 14.289 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 14.320 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 13.871 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 13.871 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 14.822 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 14.822 ;      ; Rise       ; aa[1]           ;
++--------------+------------+--------+------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Output Enable Times                                              ;
++--------------+------------+--------+------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+------+------------+-----------------+
+; bd_inout[*]  ; aa[1]      ; 13.219 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 13.637 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 13.637 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 13.637 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 13.668 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 13.219 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 13.219 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 14.170 ;      ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 14.170 ;      ; Rise       ; aa[1]           ;
++--------------+------------+--------+------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Output Disable Times                                                             ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; Data Port    ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; bd_inout[*]  ; aa[1]      ; 13.871    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 14.289    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 14.289    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 14.289    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 14.320    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 13.871    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 13.871    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 14.822    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 14.822    ;           ; Rise       ; aa[1]           ;
++--------------+------------+-----------+-----------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                     ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; Data Port    ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++--------------+------------+-----------+-----------+------------+-----------------+
+; bd_inout[*]  ; aa[1]      ; 13.219    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[0] ; aa[1]      ; 13.637    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[1] ; aa[1]      ; 13.637    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[2] ; aa[1]      ; 13.637    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[3] ; aa[1]      ; 13.668    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[4] ; aa[1]      ; 13.219    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[5] ; aa[1]      ; 13.219    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[6] ; aa[1]      ; 14.170    ;           ; Rise       ; aa[1]           ;
+;  bd_inout[7] ; aa[1]      ; 14.170    ;           ; Rise       ; aa[1]           ;
++--------------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; aa[1]      ; aa[1]    ; 7055     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; aa[1]      ; aa[1]    ; 7055     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; aa[1]      ; aa[1]    ; 121      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; aa[1]      ; aa[1]    ; 121      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 1     ; 1    ;
+; Unconstrained Input Ports       ; 13    ; 13   ;
+; Unconstrained Input Port Paths  ; 142   ; 142  ;
+; Unconstrained Output Ports      ; 14    ; 14   ;
+; Unconstrained Output Port Paths ; 31    ; 31   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Mar 03 22:52:04 2013
+Info: Command: quartus_sta EPT_570_AP_M4_Top -c EPT_570_AP_M4_Top
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335093): TimeQuest Timing Analyzer is analyzing 14 combinational loops as latches.
+Info (332104): Reading SDC File: 'EPT_570_AP_M4_Top.sdc'
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "switch_reset|datad"
+    Warning (332126): Node "switch_reset|combout"
+Warning (332060): Node: active_transfer_library:ACTIVE_TRANSFER_LIBRARY_INST|ft_245_state_machine:FT_245_STATE_MACHINE_INST|state[1] was determined to be a clock but was found without an associated clock assignment.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.056
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.056        -0.280 aa[1] 
+Info (332146): Worst-case hold slack is 1.379
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.379         0.000 aa[1] 
+Info (332146): Worst-case recovery slack is 6.003
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     6.003         0.000 aa[1] 
+Info (332146): Worst-case removal slack is 8.594
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.594         0.000 aa[1] 
+Info (332146): Worst-case minimum pulse width slack is 7.309
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     7.309         0.000 aa[1] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 410 megabytes
+    Info: Processing ended: Sun Mar 03 22:52:07 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
